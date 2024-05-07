@@ -1,0 +1,63 @@
+.wrapper {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+
+    input {
+        background-color: #fff;
+    }
+
+    .form {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+
+}
+
+.dop_info {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+
+
+.city {
+    display: flex;
+    gap: 10px;
+}
+
+.point {
+    background-image: url(./assets/Point.svg);
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.image {
+    background-image: url(./assets/Icon.svg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
