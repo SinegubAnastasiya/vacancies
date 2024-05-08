@@ -41,7 +41,7 @@ function Vacancy() {
             )
         }
         </div>
-            <Pagination count={12} variant="outlined" color="secondary" />
+        <Pagination count={10} variant="outlined" shape="rounded" color="secondary" />
     </div>
 }
 
