@@ -1,0 +1,27 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .starImg {
+        background-image: url('./assets/Star.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        z-index: 5;
+        right: 25px;
+        top: 45px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        position: relative;
+    }
+}

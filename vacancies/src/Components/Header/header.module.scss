@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerImg {
+        background-image: url('./assets/Union.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+    }
+
+    h1 {
+        // text-align: left;
+        font: 600 24px Poppins;
+        margin-left: 12px;
+        margin-right: 280px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav p {
+        text-align: left;
+        font: 400 16px Inter;
+        color: #232134;
+    }
+
+    .nav p:hover {
+        color: #5E96FC;
+    }
+}

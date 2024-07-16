@@ -1,12 +1,25 @@
 import { Button, TextField, Pagination } from "@mui/material"
-import style from './style.module.scss'
 import { Link } from "react-router-dom"
-
 import arr from '../../storage/arr.json'
+import NotFound from "../../Components/NotFound/NotFound"
+import Header from "../../Components/Header/Header"
+import style from './style.module.scss'
+import { useState } from "react"
 
 function Vacancy() {
+    const [likedVacancies, setLikedVacancies] = useState(JSON.parse(localStorage.getItem('LikedArr')) || [])
+
+    const addToBasket = (el) => {
+        const checkVacancies = likedVacancies.filter(elem => elem.id == el.id)
+        if (!checkVacancies.length) {
+            setLikedVacancies([...likedVacancies, el])
+            localStorage.setItem('LikedArr', JSON.stringify([...likedVacancies, el]))
+        }
+        console.log(likedVacancies);
+    }
 
     return <div className={style.wrapper}>
+        <Header />
         <div className={style.form}>
             <TextField id="outlined-basic" label="Outlined" variant="outlined" />
             <Button variant="contained">Search</Button>
@@ -14,24 +27,30 @@ function Vacancy() {
 
         <div className={style.info}>{
             arr.map((el, i) =>
-                <Link to={`/${el.id}/${el.title}`} key={i}>
-                <div className={style.item}>
-                    <h1>{el.title}</h1>
+                <div key={i} className={style.item}>
+                    <Link to={`/${el.id}/${el.title}`}>
+                        <h1>{el.title}</h1>
 
-                    <div className={style.dop_info}>
-                        <p>{el.salary}</p>
-                        <div className={style.point}></div>
-                        <p>{el.workday}</p>
-                    </div>
+                        <div className={style.dop_info}>
+                            <p>{el.salary}</p>
+                            <div className={style.point}></div>
+                            <p>{el.workday}</p>
+                        </div>
 
-                    <div className={style.city}>
-                        <div className={style.image}></div>
-                        <p>{el.city}</p>
-                    </div>
-                </div></Link>
+                        <div className={style.city}>
+                            <div className={style.image}></div>
+                            <p>{el.city}</p>
+                        </div>
+                    </Link>
+                    <div className={style.starImg} onClick={() => addToBasket(el)}></div>
+                </div>
             )
         }
+
         </div>
+
+        {!arr.length ? <NotFound /> : null}
+
         <Pagination count={12} variant="outlined" shape="rounded" color="secondary" />
     </div>
 }
