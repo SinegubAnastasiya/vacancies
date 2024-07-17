@@ -4,10 +4,20 @@ import arr from '../../storage/arr.json'
 import NotFound from "../../Components/NotFound/NotFound"
 import Header from "../../Components/Header/Header"
 import style from './style.module.scss'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Vacancy() {
+    const [allVacancies, setAllVacancies] = useState(arr)
+    const [search, setSearch] = useState('')
+    const [flagSearch, setFlagSearch] = useState(false)
+
     const [likedVacancies, setLikedVacancies] = useState(JSON.parse(localStorage.getItem('LikedArr')) || [])
+
+    useEffect(() => {
+        const filteredVacancies = arr.filter(el => el.title.toLowerCase().includes(search.toLowerCase()))
+        setAllVacancies(filteredVacancies)
+        setFlagSearch(false)
+    }, [flagSearch])
 
     const addToBasket = (el) => {
         const checkVacancies = likedVacancies.filter(elem => elem.id == el.id)
@@ -17,16 +27,16 @@ function Vacancy() {
         }
         console.log(likedVacancies);
     }
-
+    
     return <div className={style.wrapper}>
         <Header />
         <div className={style.form}>
-            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-            <Button variant="contained">Search</Button>
+            <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={(e) => setSearch(e.target.value)} />
+            <Button variant="contained" onClick={() => setFlagSearch(true)}>Search</Button>
         </div>
 
         <div className={style.info}>{
-            arr.map((el, i) =>
+            allVacancies.map((el, i) =>
                 <div key={i} className={style.item}>
                     <Link to={`/${el.id}/${el.title}`}>
                         <h3>{el.title}</h3>
