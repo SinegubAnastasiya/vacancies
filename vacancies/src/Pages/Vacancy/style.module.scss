@@ -1,10 +1,15 @@
 .wrapper {
-    width: 600px;
+    width: 773px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 20px;
+
+    input {
+        background-color: #fff;
+        width: 640px;
+    }
 
     .form {
         display: flex;
@@ -26,29 +31,50 @@
         position: absolute;
         z-index: 5;
         right: 25px;
-        top: 45px;
+        top: 25px;
     }
 
-    .item {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        background-color: #fff;
-        border-radius: 12px;
-        padding: 24px;
-        position: relative;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+
+    h3 {
+        font: 600 20px Inter;
+        color: #5E96FC;
     }
 }
 
 .dop_info {
     display: flex;
     align-items: center;
-    gap: 15px
+    gap: 15px;
+
+    h2 {
+        font: 600 16px Inter;
+        color: #232134;
+    }
+
+    p {
+        font: 400 16px Inter;
+        color: #232134;
+    }
 }
 
 .city {
     display: flex;
     gap: 10px;
+
+    p {
+        font: 400 16px Inter;
+        color: #232134;
+    }
 }
 
 .point {

@@ -1,3 +1,17 @@
+.wrapper {
+    width: 773px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+
+    .form {
+        display: flex;
+        gap: 10px;
+    }
+}
+
 .info {
     display: flex;
     flex-direction: column;
@@ -12,16 +26,64 @@
         position: absolute;
         z-index: 5;
         right: 25px;
-        top: 45px;
+        top: 35px;
     }
 
-    .item {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        background-color: #fff;
-        border-radius: 12px;
-        padding: 24px;
-        position: relative;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+
+    h3 {
+        font: 600 20px Inter;
+        color: #5E96FC;
     }
+}
+
+.dop_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    h2 {
+        font: 600 16px Inter;
+        color: #232134;
+    }
+
+    p {
+        font: 400 16px Inter;
+        color: #232134;
+    }
+}
+
+.city {
+    display: flex;
+    gap: 10px;
+
+    p {
+        font: 400 16px Inter;
+        color: #232134;
+    }
+}
+
+.point {
+    background-image: url(../assets/Point.svg);
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.image {
+    background-image: url(../assets/Icon.svg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

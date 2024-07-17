@@ -22,7 +22,6 @@ function Basket() {
         getLikedVacancies()
     }, [])
 
-
     return <>
         <Header />
 
@@ -30,10 +29,10 @@ function Basket() {
             newVacancies.map((el, i) =>
                 <div key={i} className={style.item}>
                     <Link to={`/${el.id}/${el.title}`}>
-                        <h1>{el.title}</h1>
+                        <h3>{el.title}</h3>
 
                         <div className={style.dop_info}>
-                            <p>{el.salary}</p>
+                            <h2>{el.salary}</h2>
                             <div className={style.point}></div>
                             <p>{el.workday}</p>
                         </div>
